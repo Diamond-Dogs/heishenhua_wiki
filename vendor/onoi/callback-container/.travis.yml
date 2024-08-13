@@ -1,0 +1,23 @@
+# http://docs.travis-ci.com/user/workers/container-based-infrastructure/
+sudo: false
+
+language: php
+
+matrix:
+  include:
+    - env: TYPE=coverage
+      php: 5.6
+    - env: TYPE=UNIT;
+      php: 5.5
+    - env: TYPE=UNIT;
+      php: hhvm
+    - env: TYPE=UNIT;
+      php: 7
+    - env: TYPE=UNIT;
+      php: 7.1
+
+script:
+  - bash ./tests/travis/run-tests.sh
+
+after_success:
+  - bash ./tests/travis/upload-coverage-report.sh

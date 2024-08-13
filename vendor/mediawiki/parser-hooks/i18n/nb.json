@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jon Harald Søby"
+		]
+	},
+	"parserhooks-desc": "OOP-grensesnitt for å lage MediaWiki parser hooks på en deklarativ måte"
+}

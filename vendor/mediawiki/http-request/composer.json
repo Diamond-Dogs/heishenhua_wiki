@@ -1,0 +1,52 @@
+{
+	"name": "mediawiki/http-request",
+	"type": "library",
+	"description": "A minimalistic http/curl request interface library",
+	"keywords": [
+		"http request",
+		"curl"
+	],
+	"homepage": "https://github.com/SemanticMediaWiki/http-request",
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "James Hong Kong",
+			"homepage": "https://github.com/mwjames"
+		}
+	],
+	"require": {
+		"php": ">=8.0",
+		"onoi/cache": "~1.2"
+	},
+	"suggest": {
+		"lib-curl": "Allows making CURL requests"
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "1.x-dev"
+		}
+	},
+	"autoload": {
+		"psr-4": {
+			"Onoi\\HttpRequest\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Onoi\\HttpRequest\\Tests\\": "tests/phpunit/Unit",
+			"Onoi\\HttpRequest\\Tests\\Integration\\": "tests/phpunit/Integration"
+		}
+	},
+	"config": {
+		"process-timeout": 0
+	},
+	"scripts":{
+		"phpunit": "phpunit -c phpunit.xml.dist"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "^9.5"
+	},
+	"replace": {
+		"onoi/http-request": "*"
+	}
+}

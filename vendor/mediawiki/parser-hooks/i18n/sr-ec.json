@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Obsuser",
+			"Acamicamacaraca"
+		]
+	},
+	"parserhooks-desc": "OOP интерфејс за прављење Медијавики парсер хукса на декларативни начин"
+}

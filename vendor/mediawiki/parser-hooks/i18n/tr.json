@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"BaRaN6161 TURK"
+		]
+	},
+	"parserhooks-desc": "MediaWiki çözümleyici kancalarını bildirimsel bir şekilde oluşturmak için OOP arabirimi"
+}

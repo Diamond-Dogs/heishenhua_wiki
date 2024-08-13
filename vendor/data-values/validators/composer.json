@@ -1,0 +1,54 @@
+{
+	"name": "data-values/validators",
+	"type": "library",
+	"description": "Common ValueValidator implementations",
+	"keywords": [
+		"datavalues",
+		"wikidata",
+		"validators",
+		"validation"
+	],
+	"homepage": "https://github.com/DataValues/Validators",
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "Jeroen De Dauw",
+			"email": "jeroendedauw@gmail.com",
+			"homepage": "http://jeroendedauw.com",
+			"role": "Developer"
+		},
+		{
+			"name": "The Wikidata team",
+			"role": "Developer"
+		}
+	],
+	"support": {
+		"irc": "irc://irc.freenode.net/wikidata"
+	},
+	"require": {
+		"php": ">=7.2",
+		"data-values/data-values": "^3.0.0|^2.1.1|~1.0|~0.1",
+		"data-values/interfaces": "^1.0.0|~0.2.0|~0.1.0"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "^8.5",
+		"mediawiki/mediawiki-codesniffer": "^34"
+	},
+	"autoload": {
+		"psr-4": {
+			"ValueValidators\\": "src"
+		}
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "0.1.x-dev"
+		}
+	},
+	"scripts": {
+		"test": [
+			"composer validate --no-interaction",
+			"phpcs -p -s",
+			"phpunit"
+		]
+	}
+}

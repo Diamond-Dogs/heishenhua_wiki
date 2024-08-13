@@ -1,0 +1,28 @@
+language: php
+
+matrix:
+  include:
+    - env: DBTYPE=mysql; MW=master
+      php: 7.3
+    - env: DBTYPE=sqlite; MW=1.33.0
+      php: 7.3
+    - env: DBTYPE=mysql; MW=1.31.3
+      php: 7.2
+
+sudo: false
+
+install:
+  - travis_retry composer self-update
+  - bash .travis.install.sh
+
+script: ../phase3/tests/phpunit/phpunit.php -c ../phase3/extensions/ParserHooks/phpunit.xml.dist
+
+after_success:
+  - if [[ "`phpenv version-name`" != "7.3" ]]; then exit 0; fi
+  - ../phase3/tests/phpunit/phpunit.php -c ../phase3/extensions/ParserHooks/phpunit.xml.dist --coverage-clover coverage.clover
+  - wget https://scrutinizer-ci.com/ocular.phar
+  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
+
+cache:
+  directories:
+    - $HOME/.composer/cache

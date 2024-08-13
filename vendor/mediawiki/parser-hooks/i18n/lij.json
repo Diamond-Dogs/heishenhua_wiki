@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Giromin Cangiaxo"
+		]
+	},
+	"parserhooks-desc": "Interfaccia OOP pe-a creaçion de parser hooks MediaWiki in mainea deciarativa"
+}

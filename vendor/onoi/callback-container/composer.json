@@ -1,0 +1,36 @@
+{
+	"name": "onoi/callback-container",
+	"type": "library",
+	"description": "A very simple callback container/builder library",
+	"keywords": [
+		"container"
+	],
+	"homepage": "https://github.com/onoi/callback-container",
+	"license": "GPL-2.0+",
+	"authors": [
+		{
+			"name": "mwjames",
+			"homepage": "https://github.com/mwjames"
+		}
+	],
+	"require": {
+		"php": ">=5.5",
+		"psr/log": "~1.0"
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "2.x-dev"
+		}
+	},
+	"autoload": {
+		"psr-4": {
+			"Onoi\\CallbackContainer\\": "src/"
+		}
+	},
+	"config": {
+		"process-timeout": 0
+	},
+	"scripts":{
+		"phpunit": "phpunit -c phpunit.xml.dist"
+	}
+}

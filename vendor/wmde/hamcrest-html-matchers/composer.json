@@ -1,0 +1,56 @@
+{
+	"name": "wmde/hamcrest-html-matchers",
+	"license": "LGPL-2.1",
+	"type": "library",
+	"description": "Set of Hamcrest matchers for HTML assertions",
+	"authors": [
+		{
+			"name": "Aleksey Bekh-Ivanov"
+		}
+	],
+	"require": {
+		"php": ">=7.2",
+		"ext-dom": "*",
+		"ext-libxml": "*",
+		"ext-mbstring": "*",
+		"hamcrest/hamcrest-php": "^2.0.1"
+	},
+	"require-dev": {
+		"mediawiki/mediawiki-codesniffer": "35.0.0",
+		"mediawiki/mediawiki-phan-config": "0.10.6",
+		"php-parallel-lint/php-console-highlighter": "0.5",
+		"php-parallel-lint/php-parallel-lint": "1.2.0",
+		"phpunit/phpunit": "^8.5"
+	},
+	"autoload": {
+		"psr-4": {
+			"WMDE\\HamcrestHtml\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"files": [
+			"vendor/hamcrest/hamcrest-php/hamcrest/Hamcrest.php"
+		],
+		"psr-4": {
+			"WMDE\\HamcrestHtml\\Test\\": "tests/"
+		}
+	},
+	"scripts": {
+		"ci": "composer test",
+		"fix": "phpcbf",
+		"lint": "parallel-lint --exclude vendor .",
+		"phan": "phan -d . --long-progress-bar",
+		"phpcs": "phpcs -p -s",
+		"phpunit": "phpunit",
+		"test": [
+			"composer lint",
+			"composer phpcs",
+			"composer phpunit"
+		]
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "0.1.x-dev"
+		}
+	}
+}

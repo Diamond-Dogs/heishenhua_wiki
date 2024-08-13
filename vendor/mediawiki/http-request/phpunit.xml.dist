@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         backupGlobals="false"
+         backupStaticAttributes="false"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         stopOnError="false"
+         stopOnFailure="false"
+         stopOnIncomplete="false"
+         stopOnSkipped="false"
+         verbose="true"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
+    <coverage includeUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">src</directory>
+        </include>
+    </coverage>
+    <testsuites>
+        <testsuite name="onoi-http-request-unit">
+            <directory>tests/phpunit/Unit</directory>
+        </testsuite>
+        <testsuite name="onoi-http-request-integration">
+            <directory>tests/phpunit/Integration</directory>
+        </testsuite>
+    </testsuites>
+    <php>
+        <const name="WEB_SERVER_HOST" value="localhost"/>
+        <const name="WEB_SERVER_PORT" value="13499"/>
+        <const name="WEB_SERVER_DOCROOT" value="/http-public"/>
+    </php>
+</phpunit>
